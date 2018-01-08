@@ -1,18 +1,80 @@
-<style>
-.bizmail_loginpanel{font-size:12px;width:300px;height:auto;border:1px solid #cccccc;background:#ffffff;}
-.bizmail_LoginBox{padding:10px 15px;}
-.bizmail_loginpanel h3{padding-bottom:5px;margin:0 0 5px 0;border-bottom:1px solid #cccccc;font-size:14px;}
-.bizmail_loginpanel form{margin:0;padding:0;}
-.bizmail_loginpanel input.text{font-size:12px;width:100px;height:20px;margin:0 2px;border:1px solid #C3C3C3;border-color:#7C7C7C #C3C3C3 #C3C3C3 #9A9A9A;}
-.bizmail_loginpanel .bizmail_column{height:28px;}
-.bizmail_loginpanel .bizmail_column label{display:block;float:left;width:30px;height:24px;line-height:24px;font-size:12px;}
-.bizmail_loginpanel .bizmail_column .bizmail_inputArea{float:left;width:240px;}
-.bizmail_loginpanel .bizmail_column span{font-size:12px;word-wrap:break-word;margin-left: 2px;line-height:200%;}
-.bizmail_loginpanel .bizmail_SubmitArea{margin-left:30px;clear:both;}
-.bizmail_loginpanel .bizmail_SubmitArea a{font-size:12px;margin-left:5px;}
-.bizmail_loginpanel select{width:110px;height:20px;margin:0 2px;}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="save" content="history">
+<title>悠悠品</title>
+<link rel="stylesheet" type="text/css" href="./assets/login.css">
+<style type="text/css">
+
+#preview_box a{ color:#34599d;}
+.bg_color{ background:#eaf3ff;}
+.border_color{ border:1px solid #acc3e4;}
+.company_link{color:#34599d; }
 </style>
-<script type="text/javascript" src="http://exmail.qq.com/zh_CN/htmledition/js_biz/outerlogin.js"  charset="gb18030"></script>
-<script type="text/javascript">
-writeLoginPanel({domainlist:"uyoupin.com", mode:"vertical"});
-</script>
+<script>
+
+ 
+function checkInput() {
+	var b = document.form1.uin,
+		a = document.form1.pwd;
+	if (0 == b.value.length) {
+		b.focus();
+		return false;
+	}
+	if (0 == a.value.length) {
+		a.focus();
+		return false;
+	}
+	document.form1.submit();
+	setTimeout(" document.form1.pwd.value = '' ", 500);
+	return false;
+}
+ 
+
+</script></head>
+<body class="self_dm_login layout_wrap_03">
+<form name="form1" method="post" action="https://exmail.qq.com/cgi-bin/login" onsubmit="return checkInput();">
+	<input type="hidden" name="firstlogin" value="false">
+	<input type="hidden" name="errtemplate" value="dm_loginpage">
+	<input type="hidden" name="aliastype" value="other">
+	<input type="hidden" name="dmtype" value="bizmail">
+	<input type="hidden" name="p" value="">
+	<div class="self_preview_03" id="preview_box">
+
+		<div class="self_preview_wrap">
+			<div class="preview_head"><div class="company_logo edit_issue"><img style="margin-top:0px;margin-left:0px;" class="logo_img" src="./assets/top.jpg" alt=""></div><p class="bg_color edit_issue"></p></div>
+			<div class="company_main">
+				<div class="company_main_wrap">
+				<div class="company_pic edit_issue"><img src="./assets/right.png" ></div>
+				<div class="company_loginbox bg_color border_color edit_issue">
+					<div id="js_input_area"><h3>登录邮箱</h3>
+						<div class="company_input_wrap " style="display: inline-block; vertical-align: middle;">
+						<label for="qquin">帐&nbsp;&nbsp;号：</label>
+						<span class="input_with_domain  " style="position: relative; ">
+							<input type="text"  name="uin" value="" tabindex="1" class="self_input  "  >
+							<span class="domain_play" title="@uyoupin.com">@uyoupin...</span>
+							<input type="hidden" name="domain" value="uyoupin.com">
+						</span>
+						</div>
+						<div class="company_input_wrap"><label for="pp">密&nbsp;&nbsp;码：</label>
+						<input type="password"   name="pwd" value="" tabindex="2" class="self_input" ></div> 
+					</div> 
+
+					 <div class="login_submit" style="display: inline-block;vertical-align: middle; position: relative; top:-2px">
+						<a class="login_btn_wrapper" href="javascript:;"><input class="login_btn" type="submit" value="登录"></a>
+					 </div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="company_bottom">
+			<div class="company_link bg_color edit_issue">
+				 <a href="http://uyoupin.com/" target="_blank">About Us</a> |
+				 <a href="http://vue.uyoupin.com/" target="_blank">Vue Demo</a> 	 
+			</div>
+		</div>
+	</div>
+</form>
+</body></html>
